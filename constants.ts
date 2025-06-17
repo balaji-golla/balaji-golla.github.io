@@ -1,11 +1,11 @@
 
 import { Project, BlogPost, NavItem } from './types';
 
-export const YOUR_NAME = "Alex Johnson"; // Replace with your name
-export const YOUR_TITLE = "Senior Frontend React Engineer & UI/UX Designer"; // Replace with your title
-export const YOUR_LINKEDIN_URL = "https://www.linkedin.com/in/yourprofile"; // Replace with your LinkedIn
-export const YOUR_GITHUB_URL = "https://github.com/yourusername"; // Replace with your GitHub
-export const YOUR_EMAIL = "youremail@example.com"; // Replace with your email
+export const YOUR_NAME = "Balaji Golla"; // Replace with your name
+export const YOUR_TITLE = "Senior Solutions Architect"; // Replace with your title
+export const YOUR_LINKEDIN_URL = "https://www.linkedin.com/in/balajigolla"; // Replace with your LinkedIn
+export const YOUR_GITHUB_URL = "https://github.com/balaji-golla"; // Replace with your GitHub
+export const YOUR_EMAIL = "gbalaji.mca@gmail.com"; // Replace with your email
 
 export const NAV_ITEMS: NavItem[] = [
   { name: 'Home', href: '#hero' },
