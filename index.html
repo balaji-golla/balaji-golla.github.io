@@ -1,51 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF- रीड" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Tech Portfolio Hub"
-    />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <title>Tech Portfolio Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#3B82F6', // Blue-500
-              secondary: '#10B981', // Emerald-500
-              neutral: {
-                light: '#F3F4F6', // Gray-100
-                DEFAULT: '#6B7280', // Gray-500
-                dark: '#1F2937', // Gray-800
-              },
-            }
-          }
-        }
-      }
-    </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
-    "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.5.1"
-  }
-}
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Tech News & Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">MyTechSite</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Tech News</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About & Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Latest in Tech</h1>
+                <p>Curated news, insights, and analysis on the world of technology.</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <h2>Top Stories</h2>
+                <div class="card-grid">
+                    <!-- News Article Card 1 -->
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=AI+Innovation" alt="AI illustration">
+                        <div class="card-content">
+                            <span class="tag tag-ai">AI</span>
+                            <h3>The Next Leap in Generative AI</h3>
+                            <p>A new model from a leading research lab is pushing the boundaries of what's possible with text-to-image generation...</p>
+                            <small>Published on October 26, 2023</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <!-- News Article Card 2 -->
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Quantum+Computing" alt="Quantum computer illustration">
+                        <div class="card-content">
+                            <span class="tag tag-hardware">Hardware</span>
+                            <h3>Quantum Computing Reaches New Milestone</h3>
+                            <p>Scientists have successfully maintained quantum coherence for a record-breaking duration, a critical step towards viable quantum computers...</p>
+                            <small>Published on October 25, 2023</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- News Article Card 3 -->
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Cybersecurity" alt="Cybersecurity lock">
+                        <div class="card-content">
+                            <span class="tag tag-security">Cybersecurity</span>
+                            <h3>Global Phishing Campaign Targets Financial Sector</h3>
+                            <p>A sophisticated new phishing attack is using clever social engineering tactics to bypass multi-factor authentication...</p>
+                            <small>Published on October 24, 2023</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
 </html>
