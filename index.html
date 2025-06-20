@@ -1,34 +1,216 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom scrollbar for a more modern look (optional) */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-    body {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
-  </style>
-<link rel="stylesheet" href="/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] - Professional Hub</title>
+    <style>
+        /* --- General Styling & Resets --- */
+        :root {
+            --primary-color: #007bff; /* A nice blue */
+            --primary-hover-color: #0056b3;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --text-color: #212529;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e7e7e7;
+        }
+
+        .main-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: var(--dark-gray);
+        }
+
+        .main-header p {
+            font-size: 1.1em;
+            color: #6c757d;
+        }
+        
+        /* Main Navigation Bar */
+        .main-nav {
+            background-color: var(--dark-gray);
+            padding: 10px 0;
+            position: sticky; /* Makes nav bar stick to top on scroll */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
+        }
+
+        .main-nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        /* --- Main Content: Menu Item Cards --- */
+        main {
+            padding: 40px 0;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .menu-card h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .menu-card p {
+            font-size: 1rem;
+            color: #6c757d;
+            min-height: 40px; /* Ensures cards have a similar height */
+        }
+
+        .menu-card .button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-card .button:hover {
+            background-color: var(--primary-hover-color);
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #e9ecef;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+    </style>
 </head>
-<body class="bg-slate-100 text-slate-800 antialiased">
-  <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+
+    <header class="main-header">
+        <h1>My Professional Hub</h1>
+        <p>A central place for my projects, profiles, and resources.</p>
+    </header>
+
+    <nav class="main-nav">
+        <!-- 
+            This is your main navigation. 
+            Replace the '#' with your actual links. 
+            Example: href="https://github.com/your-username"
+        -->
+        <ul>
+            <li><a href="#tech-news">Tech News</a></li>
+            <li><a href="#linkedin">LinkedIn Profiles</a></li>
+            <li><a href="#github">GitHub Projects</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div class="menu-grid">
+                <!-- Tech News Card -->
+                <section class="menu-card" id="tech-news">
+                    <h2>Tech News</h2>
+                    <p>Curated links to top technology news and publication websites.</p>
+                    <a href="#" class="button">Visit News Links</a>
+                </section>
+
+                <!-- LinkedIn Profiles Card -->
+                <section class="menu-card" id="linkedin">
+                    <h2>LinkedIn Profiles</h2>
+                    <p>Connect with me and other professionals on LinkedIn.</p>
+                    <a href="#" class="button">View My LinkedIn</a>
+                </section>
+
+                <!-- GitHub Projects Card -->
+                <section class="menu-card" id="github">
+                    <h2>GitHub Projects</h2>
+                    <p>Explore my portfolio of open-source projects, code, and contributions.</p>
+                    <a href="#" class="button">See My GitHub</a>
+                </section>
+
+                <!-- Blogs Card -->
+                <section class="menu-card" id="blogs">
+                    <h2>Blogs</h2>
+                    <p>Read my thoughts on software development, tech trends, and career growth.</p>
+                    <a href="#" class="button">Read My Blog</a>
+                </section>
+
+                <!-- Contact Card -->
+                <section class="menu-card" id="contact">
+                    <h2>Contact Me</h2>
+                    <p>Have a question about my GitHub projects or want to collaborate? Reach out!</p>
+                    <!-- For the contact link, you can use a mailto link or a link to a contact form -->
+                    <a href="mailto:youremail@example.com" class="button">Send an Email</a>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2024 [Your Name]. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
