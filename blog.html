@@ -9,6 +9,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<style>
+    .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 350px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.card-content small {
+    display: block;
+    margin: 8px 0;
+    color: #888;
+}
+
+.card-content .read-more {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.card-content .read-more:hover {
+    text-decoration: underline;
+}
+</style>
 <body>
     <header>
         <div class="container">
@@ -32,7 +83,7 @@
                 <div class="AgenticAIVsGenAI
                     <!-- Blog Post Card 1 -->
                     <article class="card">
-                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI.jpeg" alt="Code on a screen">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI.jpeg" alt="Agentic AI vs. Generative AI">
                         <div class="card-content">
                             <h3>Agentic AI vs. Generative AI</h3>
                             <p>A Practical Guide: From Content Creation to Autonomous Action</p>
