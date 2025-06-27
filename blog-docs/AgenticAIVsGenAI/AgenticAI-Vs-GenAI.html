@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI vs. Generative AI</title>
+
+    <style>
+        /* General Body & Typography */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+    .blog-header-img {
+      width: 100%;         /* fills container width */
+      height: 300px;       /* set desired header height */
+      object-fit: cover;   /* crops image to fill area while maintaining aspect ratio */
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .blog-header-img {
+        height: 200px; /* adjust height for mobile view if needed */
+      }
+    }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            color: #212529;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 2em;
+            color: #0056b3;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-top: 50px;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #343a40;
+            margin-top: 30px;
+        }
+        h1 + h3 {
+            text-align: center;
+            color: #6c757d;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraphs & Lists */
+        p, li {
+            font-size: 1.1em;
+            margin-bottom: 1em;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+        thead th {
+            background-color: #e9ecef;
+            font-weight: bold;
+            color: #495057;
+        }
+        tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Code Blocks */
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        code {
+            font-family: "Fira Code", "Courier New", monospace;
+        }
+        p > code, li > code {
+             background-color: #e9ecef;
+             padding: 2px 5px;
+             border-radius: 4px;
+             font-size: 0.9em;
+        }
+
+        /* Blockquote */
+        blockquote {
+            border-left: 5px solid #007bff;
+            background-color: #f1f8ff;
+            margin: 20px 0;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+        blockquote p {
+            margin: 0;
+        }
+
+        /* Page Footer */
+        .page-footer {
+            border-top: 1px solid #e9ecef;
+            text-align: right;
+            margin-top: 40px;
+            padding-top: 10px;
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body>
+
+   
+
+    <main class="container">
+ 
+  <main class="container">
+    <img src="AgenticAIVsGenAI.jpeg" alt="Agentic AI vs. Generative AI" class="blog-header-img" />
+  </main>
+
+        <p style="text-align: center;"><strong>A Comprehensive Comparison for Professionals and Developers</strong></p>
+
+        <p>In the landscape of artificial intelligence, Generative AI (GenAI) took the world by storm, democratizing the creation of human-like content. Now, a new paradigm is emerging: <strong>Agentic AI</strong>.</p>
+        <p>While GenAI acts as a powerful tool responding to direct commands, Agentic AI functions as an autonomous system, capable of planning, executing multi-step tasks, and using tools to achieve a high-level goal.</p>
+        <p>We will explore their core differences, architectural foundations, real-world applications, and provide functional code examples to bring these concepts to life.</p>
+        
+        <!-- Page 2 -->
+        <h2>Core Differences at a Glance</h2>
+        <p>Understanding the fundamental distinction between Generative AI and Agentic AI is crucial. GenAI is a specific capability (generation), while Agentic AI is an architectural approach (autonomy). The following table, breaks down their primary attributes.</p>
+        <h3>Key Differences</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Generative AI (GenAI)</th>
+                    <th>Agentic AI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Core Function</strong></td>
+                    <td>Generates new content (text, images, code) based on specific, direct prompts.</td>
+                    <td>Executes multistep tasks autonomously to achieve a complex, high-level goal.</td>
+                </tr>
+                <tr>
+                    <td><strong>Interaction Model</strong></td>
+                    <td><strong>Request-Response:</strong> User provides a detailed prompt, AI provides a single, direct output. It is reactive.</td>
+                    <td><strong>Goal-Oriented & Proactive:</strong> User provides a goal, AI creates and executes a plan, potentially without further human intervention. It is proactive.</td>
+                </tr>
+                <tr>
+                    <td><strong>Task Complexity</strong></td>
+                    <td>Best for discrete, single-shot tasks like drafting an email, summarizing a document, or writing a block of code.</td>
+                    <td>Handles complex, chained tasks that require research, analysis, tool use, and decision-making, such as planning a trip or conducting due diligence.</td>
+                </tr>
+                <tr>
+                    <td><strong>Key Benefit</strong></td>
+                    <td><strong>Accelerates content creation.</strong> Drastically reduces the time to create initial drafts and synthesize information.</td>
+                    <td><strong>Automates complex workflows.</strong> Tackles multifaceted problems, freeing up significant human time and cognitive load.</td>
+                </tr>
+                <tr>
+                    <td><strong>Key Consideration</strong></td>
+                    <td>Requires careful prompt engineering and fact-checking. Prone to "hallucinations" if not grounded with reliable data.</td>
+                    <td>Requires clear goal definition, robust oversight, and validation checkpoints. The system's autonomy needs guardrails.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>In a Nutshell:</strong></p>
+        <blockquote>
+            <p><strong>Generative AI is a skilled co-pilot you give turn-by-turn directions to. Agentic AI is an autonomous chauffeur you give a destination to.</strong></p>
+        </blockquote>
+        
+        <!-- Page 3 -->
+        <h2>Architectural Distinctions</h2>
+        <p>The "how" behind each AI type reveals their most significant differences. Their underlying architectures are designed for entirely different purposes.</p>
+        <h3>Architecture & Decision-Making Comparison</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Generative AI (GenAI)</th>
+                    <th>Agentic AI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Core Component</strong></td>
+                    <td>A Large Language Model (LLM) or Diffusion Model trained on a massive dataset. (e.g., Google's Gemini, OpenAI's GPT-4).</td>
+                    <td>An <strong>Agentic Loop/Framework</strong> that <em>uses</em> an LLM as its "brain" or reasoning engine.</td>
+                </tr>
+                <tr>
+                    <td><strong>Operational Flow</strong></td>
+                    <td><strong>Linear Path:</strong><br>1. <code>Input (Prompt)</code><br>2. <code>Model Processing</code><br>3. <code>Output (Content)</code></td>
+                    <td><strong>Cyclical & Dynamic Path (e.g., ReAct Framework):</strong><br>1. <code>Goal Definition</code><br>2. <code>Thought/Planning</code> (LLM decides what to do)<br>3. <code>Action</code> (e.g., use a tool, search the web)<br>4. <code>Observation</code> (Analyze the result of the action)<br>5. <em>Repeat from step 2 until the goal is met.</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Decision-Making</strong></td>
+                    <td>Makes a single, primary decision: predicting the next word/pixel to generate the most statistically probable output based on the prompt.</td>
+                    <td>Makes a <em>sequence</em> of decisions:<br>• Which tool to use?<br>• What input to give the tool?<br>• Is the goal complete?<br>• Does the plan need to be revised?</td>
+                </tr>
+                <tr>
+                    <td><strong>Level of Autonomy</strong></td>
+                    <td><strong>Low.</strong> Requires user direction for each step and output. The AI is a passive tool awaiting a command.</td>
+                    <td><strong>High.</strong> Can operate independently toward the set objective, self-correcting and chaining actions together. The AI is an active worker.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+        <!-- Page 4 -->
+        <h2>Real-World Use Cases</h2>
+        <p>Some of the practical real-world use cases that illustrate this comparison in action</p>
+        <h3>Comparison of Real-World Use Cases</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Generative AI Use Cases</th>
+                    <th>Agentic AI Use Cases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>📄 <strong>Drafting & Content Creation:</strong> Creating initial versions of legal contracts, marketing copy, social media posts, or corporate communications from a template or prompt.</td>
+                    <td>🔎 <strong>Investigation:</strong> Conducting comprehensive due diligence by searching multiple databases, identifying key documents, extracting information, and compiling a structured report.</td>
+                </tr>
+                <tr>
+                    <td>📊 <strong>Summarization:</strong> Condensing large volumes of text, such as research papers, meeting transcripts, or news articles, into concise and actionable insights.</td>
+                    <td>⚙️ <strong>Workflow Automation:</strong> Managing an accounts payable workflow by validating invoices against purchase orders, routing them for approval, and scheduling payments automatically.</td>
+                </tr>
+                <tr>
+                    <td>🌐 <strong>Translation & Interpretation:</strong> Translating technical jargon into plain language for different audiences or translating content between languages.</td>
+                    <td>📈 <strong>Real-time Monitoring:</strong> Tracking regulatory changes across jurisdictions in real time, identifying affected business operations, and generating an initial action plan to address compliance gaps.</td>
+                </tr>
+                <tr>
+                    <td>💡 <strong>Brainstorming:</strong> Generating multiple alternative approaches to a problem, suggesting creative ideas, or outlining potential project plans.</td>
+                    <td>✈️ <strong>Project Management:</strong> Taking a goal like "launch a new product," then creating tasks in a project management tool, assigning them, setting deadlines, and sending status updates.</td>
+                </tr>
+                <tr>
+                    <td>💻 <strong>Code Generation:</strong> Writing a function, a unit test, or a code snippet based on a user's specific request in a particular programming language.</td>
+                    <td>🤖 <strong>Customer Onboarding:</strong> Evaluating a new customer application by gathering information from multiple sources, verifying documentation, checking against sanctions lists, and creating an account.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Page 5 -->
+        <h2>Code Snippet: GenAI vs. A Basic Agent</h2>
+        <p>This code demonstrates the fundamental difference in implementation. We use Python and the <code>google-generativeai</code> library.</p>
+        <p>First, <strong>install the library:</strong></p>
+        <pre><code>pip install google-generativeai</code></pre>
+
+        <h3>Example 1: Generative AI (Direct Prompt-Response)</h3>
+        <p>This code performs a single, direct task: creating text.</p>
+<pre><code class="language-python" >
+import google.generativeai as genai
+
+# Configure with your API key. Replace your Gemini API key to run this code.
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
+
+# Initialize the generative model
+model = genai.GenerativeModel('gemini-2.5-flash')
+
+# A direct prompt for a single task
+prompt = "Write a brief, professional email to a client summarizing our meeting on Project GenAI. Mention we will deliver the draft by Friday."
+
+# Generate the content in a single call
+response = model.generate_content(prompt)
+
+print("--- Generative AI Output ---")
+print(response.text)
+        </code></pre> 
+
+        <h3>Example 2: A Simple Agentic AI (Conceptual Loop)</h3>
+        <p>This code simulates an agent's thought process. The agent receives a <em>goal</em>, breaks it down, and uses a <em>mock tool</em> to accomplish it. The LLM acts as the reasoning engine.</p>
+        <pre><code class="language-python">
+import google.generativeai as genai
+import json
+import re # Import the regex module
+
+# Configure with your API key. Replace your Gemini API key to run this code.
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
+
+# --- 1. Tool Definitions (Python functions) ---
+def find_flights(destination, budget):
+    """Finds mock flights based on destination and budget."""
+    print(f"TOOL: Searching for flights to {destination} under ${budget}...")
+    return json.dumps([
+        {"airline": "American", "price": 450, "stops": 1},
+        {"airline": "United", "price": 600, "stops": 0}
+    ])
+
+def find_hotels(destination, budget_per_night):
+    """Finds mock hotels based on destination and budget."""
+    print(f"TOOL: Searching for hotels in {destination} under ${budget_per_night}/night...")
+    return json.dumps([
+        {"name": "Marriot", "price_per_night": 180, "rating": 4.2},
+        {"name": "Hilton", "price_per_night": 150, "rating": 4.5}
+    ])
+
+def find_activities(destination, interest):
+    """Finds mock activities based on destination and interest."""
+    print(f"TOOL: Searching for {interest} activities in {destination}...")
+    return json.dumps([
+        {"name": "Ad1 (Golden Pavilion)", "type": "cultural"},
+        {"name": "Ad2", "type": "cultural"},
+        {"name": "Chld1", "type": "nature"},
+        {"name": "Chld2", "type": "nature"}
+    ])
+
+# A dictionary to map tool names to functions
+AVAILABLE_TOOLS = {
+    "find_flights": find_flights,
+    "find_hotels": find_hotels,
+    "find_activities": find_activities,
+}
+
+# --- 2. The Agentic Core ---
+def run_agent(goal):
+    model = genai.GenerativeModel('gemini-1.5-flash-latest') # Changed model to gemini-1.5-flash-latest
+
+    # This system prompt primes the model to act as an agent with tools
+    system_prompt = f"""
+    You are a travel planning agent. Your goal is to help the user.
+    The user's goal is: '{goal}'
+
+    You have access to these tools:
+    - find_flights(destination, budget): Finds flights.
+    - find_hotels(destination, budget_per_night): Finds hotels.
+    - find_activities(destination, interest): Finds activities.
+
+    **Instructions:**
+    1. Understand the user's goal.
+    2. Decide which tool to call first to get information.
+    3. Respond ONLY with a single tool call in JSON format.
+
+    Example format:
+    {{"tool_name": "find_flights", "parameters": {{"destination": "Chicago", "budget": 2500}}}} # Removed extra parameters
+
+    Do not add any other text before or after the JSON.
+    """
+
+    print(f"AGENT: New Goal: {goal}")
+
+    # Helper function to extract JSON from a string
+    def extract_json(text):
+        match = re.search(r'\{.*\}', text, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group(0))
+            except json.JSONDecodeError:
+                return None
+        return None
+
+    # Step 1: First tool call (Flights)
+    response = model.generate_content(system_prompt)
+    tool_call = extract_json(response.text) # Use the helper function
+
+    if tool_call is None:
+        print("AGENT: Could not extract valid JSON for the first tool call.")
+        return # Exit the function if JSON is not found
+
+    print(f"AGENT: Decided to call tool: {tool_call}")
+
+    tool_function = AVAILABLE_TOOLS[tool_call['tool_name']]
+    flight_results = tool_function(**tool_call['parameters'])
+    print(f"AGENT: Observed flight data: {flight_results}\n")
+
+    # Step 2: Second tool call (Hotels), now with flight info
+    prompt_for_hotels = f"""
+    Previous action results (flights): {flight_results}.
+    What is the next tool to call to continue planning?
+    Respond ONLY with a single tool call in JSON format.
+    """
+    response = model.generate_content(system_prompt + prompt_for_hotels)
+    tool_call = extract_json(response.text) # Use the helper function again
+
+    if tool_call is None:
+        print("AGENT: Could not extract valid JSON for the second tool call.")
+        return # Exit the function if JSON is not found
+
+
+    print(f"AGENT: Decided to call tool: {tool_call}")
+
+    tool_function = AVAILABLE_TOOLS[tool_call['tool_name']]
+    hotel_results = tool_function(**tool_call['parameters'])
+    print(f"AGENT: Observed hotel data: {hotel_results}\n")
+
+    # ... you would continue this loop for activities ...
+
+    # Step 3: Final Synthesis
+    final_prompt = f"""
+    You are a travel planning agent.
+    Your original goal was: '{goal}'
+    You have gathered this information:
+    - Flights: {flight_results}
+    - Hotels: {hotel_results}
+    - Activities: You should suggest Ad1 and Ad2.
+
+    Now, generate a final, human-readable travel plan for the user. Be friendly and organize it by day.
+    """
+
+    final_plan = model.generate_content(final_prompt)
+
+    print("--- AGENT: FINAL PLAN ---")
+    print(final_plan.text)
+
+# --- 3. Run the Agent ---
+user_goal = "Plan a 5-day budget-friendly trip."
+run_agent(user_goal)
+        </code></pre>
+                
+        <!-- Page 6 -->
+        <h2>Advanced Example: Multi-Agent Systems</h2>
+        <p>Agentic AI's power is magnified when multiple specialized agents collaborate, forming a <strong>multi-agent system</strong>. Each agent has a distinct role, and they work together to tackle an even more complex objective. This mirrors a human team.</p>
+        <p><strong>Scenario:</strong> "Create a comprehensive market analysis report on the global electric vehicle (EV) industry."</p>
+
+        <h3>The Multi-Agent Team:</h3>
+        <ol>
+            <li>
+                <strong>Orchestrator Agent (The Project Manager):</strong>
+                <ul>
+                    <li><strong>Goal:</strong> Manages the entire workflow.</li>
+                    <li><strong>Action:</strong> Receives the initial request, breaks it into sub-tasks, and assigns them to the appropriate specialist agents. It ensures the final report is assembled correctly.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Research Agent (The Analyst):</strong>
+                <ul>
+                    <li><strong>Goal:</strong> Gather raw data and articles about the EV market.</li>
+                    <li><strong>Tools:</strong> Web search APIs, academic journal databases, financial data APIs.</li>
+                    <li><strong>Action:</strong> Takes keywords from the Orchestrator (e.g., "EV market size," "Tesla vs BYD," "battery technology trends"). It searches its tools, retrieves the top 10 most relevant articles and data points, and passes a structured summary back to the Orchestrator.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Writer Agent (The Content Creator):</strong>
+                <ul>
+                    <li><strong>Goal:</strong> Draft sections of the report based on the provided research.</li>
+                    <li><strong>Tool:</strong> Its primary "tool" is its internal generative capability (an LLM).</li>
+                    <li><strong>Action:</strong> Receives the structured research from the Orchestrator. It is prompted to write specific sections, such as "Executive Summary," "Competitive Landscape," and "Future Outlook," in a professional tone.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Critique Agent (The Editor):</strong>
+                <ul>
+                    <li><strong>Goal:</strong> Review the drafted report for accuracy, clarity, and consistency.</li>
+                    <li><strong>Tool:</strong> An LLM with a specific "persona" designed for critical review.</li>
+                    <li><strong>Action:</strong> Receives the draft from the Orchestrator. It checks for factual inconsistencies against the original research, suggests grammatical improvements, and ensures the tone is consistent throughout the document. It returns a list of suggested revisions.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Workflow:</h3>
+        <ol>
+            <li><strong>User &rarr; Orchestrator:</strong> "Create EV market report."</li>
+            <li><strong>Orchestrator &rarr; Research Agent:</strong> "Find data on market size, key players, and tech trends."</li>
+            <li><strong>Research Agent &rarr; Orchestrator:</strong> (Returns structured data)</li>
+            <li><strong>Orchestrator &rarr; Writer Agent:</strong> "Draft a report using this data."</li>
+            <li><strong>Writer Agent &rarr; Orchestrator:</strong> (Returns drafted report)</li>
+            <li><strong>Orchestrator &rarr; Critique Agent:</strong> "Review this draft for errors and clarity."</li>
+            <li><strong>Critique Agent &rarr; Orchestrator:</strong> (Returns suggested edits)</li>
+            <li><strong>Orchestrator</strong> applies the edits (or sends them back to the Writer Agent) and compiles the final report for the user.</li>
+        </ol>
+        <p>This collaborative approach produces a high-quality, complex output that would be nearly impossible for a single GenAI prompt to achieve.</p>
+        
+        <!-- Page 7 -->
+        <h2>Example: An Agentic Trip Planner with Gemini</h2>
+        <p>Let's build a more concrete agent that plans a trip. This example shows how the Gemini API can serve as the agent's "brain" to interpret a goal and choose from a set of defined Python functions (tools).</p>
+        <h3>Workable Example Breakdown (Gemini API)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. The Goal</strong></td>
+                    <td>The user provides a high-level, natural language goal: <code>"Plan a 50px budget-friendly trip to Chicago, focusing on cultural sites."</code></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Define Tools</strong></td>
+                    <td>We create simple Python functions that the agent can "call". These mock real-world APIs for flights, hotels, and activities.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Agent Brain</strong></td>
+                    <td>We use the Gemini model with a carefully constructed prompt that tells it about the available tools and instructs it to form a plan by calling these tools.</td>
+                </tr>
+                <tr>
+                    <td><strong>4. Execution Loop</strong></td>
+                    <td>The agent reasons about the goal, decides to call a tool, we execute that Python function, and feed the results back to the agent so it can decide on the next step.</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Synthesize</strong></td>
+                    <td>Once all necessary information is gathered, the agent synthesizes the results into a final, user-friendly itinerary.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Python Code:</h3>
+        <pre><code class="language-python">
+import google.generativeai as genai
+import json
+
+# Configure with your API key
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
+
+# --- 1. Tool Definitions (Python functions) ---
+def find_flights(destination, budget):
+    """Finds mock flights based on destination and budget."""
+    print(f"TOOL: Searching for flights to {destination} under ${budget}...")
+    return json.dumps([
+        {"airline": "BudgetAir", "price": 450, "stops": 1},
+        {"airline": "JapanFly", "price": 600, "stops": 0}
+    ])
+
+def find_hotels(destination, budget_per_night):
+    """Finds mock hotels based on destination and budget."""
+    print(f"TOOL: Searching for hotels in {destination} under ${budget_per_night}/night...")
+    return json.dumps([
+        {"name": "Kyoto Inn", "price_per_night": 80, "rating": 4.2},
+        {"name": "Temple View Hostel", "price_per_night": 50, "rating": 4.5}
+    ])
+    
+def find_activities(destination, interest):
+    """Finds mock activities based on destination and interest."""
+    print(f"TOOL: Searching for {interest} activities in {destination}...")
+    return json.dumps([
+        {"name": "Kinkaku-ji (Golden Pavilion)", "type": "cultural"},
+        {"name": "Fushimi Inari Shrine", "type": "cultural"},
+        {"name": "Arashiyama Bamboo Grove", "type": "nature"}
+    ])
+
+# A dictionary to map tool names to functions
+AVAILABLE_TOOLS = {
+    "find_flights": find_flights,
+    "find_hotels": find_hotels,
+    "find_activities": find_activities,
+}
+
+# --- 2. The Agentic Core ---
+def run_agent(goal):
+    model = genai.GenerativeModel('gemini-pro')
+    
+    # This system prompt primes the model to act as an agent with tools
+    system_prompt = f"""
+    You are a travel planning agent. Your goal is to help the user.
+    The user's goal is: '{goal}'
+    
+    You have access to these tools:
+    - find_flights(destination, budget): Finds flights.
+    - find_hotels(destination, budget_per_night): Finds hotels.
+    - find_activities(destination, interest): Finds activities.
+
+    **Instructions:**
+    1. Understand the user's goal.
+    2. Decide which tool to call first to get information.
+    3. Respond ONLY with a single tool call in JSON format, like: 
+       {{"tool_name": "find_flights", "parameters": {{"destination": "Kyoto", "budget": 500}}}}
+    
+    Do not add any other text.
+    """
+    
+    print(f"AGENT: New Goal: {goal}")
+    
+    # Step 1: First tool call (Flights)
+    response = model.generate_content(system_prompt)
+    tool_call = json.loads(response.text)
+    print(f"AGENT: Decided to call tool: {tool_call}")
+    
+    tool_function = AVAILABLE_TOOLS[tool_call['tool_name']]
+    flight_results = tool_function(**tool_call['parameters'])
+    print(f"AGENT: Observed flight data: {flight_results}\n")
+
+    # Step 2: Second tool call (Hotels), now with flight info
+    prompt_for_hotels = f"""
+    Previous action results (flights): {flight_results}. 
+    What is the next tool to call to continue planning?
+    Respond ONLY with a single tool call in JSON format.
+    """
+    response = model.generate_content(system_prompt + prompt_for_hotels)
+    tool_call = json.loads(response.text)
+    print(f"AGENT: Decided to call tool: {tool_call}")
+    
+    tool_function = AVAILABLE_TOOLS[tool_call['tool_name']]
+    hotel_results = tool_function(**tool_call['parameters'])
+    print(f"AGENT: Observed hotel data: {hotel_results}\n")
+
+    # ... you would continue this loop for activities ...
+    
+    # Step 3: Final Synthesis
+    final_prompt = f"""
+    You are a travel planning agent.
+    Your original goal was: '{goal}'
+    You have gathered this information:
+    - Flights: {flight_results}
+    - Hotels: {hotel_results}
+    - Activities: You should suggest Kinkaku-ji and Fushimi Inari Shrine.
+
+    Now, generate a final, human-readable travel plan for the user. Be friendly and organize it by day.
+    """
+    
+    final_plan = model.generate_content(final_prompt)
+    
+    print("--- AGENT: FINAL PLAN ---")
+    print(final_plan.text)
+
+# --- 3. Run the Agent ---
+user_goal = "Plan a 5-day budget-friendly trip to Chicago, focusing on cultural sites."
+run_agent(user_goal)
+        </code></pre>
+        
+        <!-- Page 8 -->
+        <h2>Conclusion: Preparing for an Autonomous Future</h2>
+        <p>The evolution from Generative AI to Agentic AI marks a fundamental shift from AI as a <strong>content generator</strong> to AI as a <strong>problem solver</strong>.</p>
+        <ul>
+            <li><strong>Generative AI</strong> has fundamentally changed how we create. It's a powerful and accessible tool that acts as a multiplier for human creativity and productivity. Its strength lies in its ability to execute well-defined, discrete tasks with incredible speed and fluency.</li>
+            <li><strong>Agentic AI</strong> is changing how we <em>work</em>. It builds upon generative models, wrapping them in an architecture of autonomy, planning, and action. By automating complex, multi-step workflows, Agentic AI systems are poised to become indispensable partners in professional fields, tackling everything from financial analysis to supply chain management.</li>
+        </ul>
+
+        <p><strong>The Key Takeaway:</strong></p>
+        <p>The two are not competitors; they are components of a more sophisticated AI ecosystem. <strong>The most powerful agentic systems will use generative models as their core reasoning engine.</strong></p>
+        <p>As professionals, developers, and innovators, the path forward isn't about choosing one over the other. It's about understanding the unique strengths of each and learning how to architect solutions that leverage both.</p>
+        <p>The future of work, as highlighted by industry leaders, will not be about simply <em>having</em> AI, but about deploying the <em>right</em> AI for the task. By mastering both generative and agentic paradigms, we can build a future where human expertise is amplified, not replaced, allowing us to focus on the strategic, creative, and uniquely human challenges that lie ahead.</p>
+        
+    </main>
+
+</body>
+<script>
+</html>
