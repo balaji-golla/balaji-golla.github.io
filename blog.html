@@ -4,61 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Your Name</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Assuming style.css is for general layout, not the cards themselves -->
+    <link rel="stylesheet" href="css/style.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <style>
+    /* --- NEW: Grid container for the blog cards --- */
+    .blog-grid {
+        display: grid;
+        /* Default to 1 column for mobile */
+        grid-template-columns: 1fr; 
+        gap: 24px; /* Space between cards */
+        padding-top: 20px;
+    }
+
+    /* --- NEW: Media query for tablets and small desktops --- */
+    @media (min-width: 768px) {
+        .blog-grid {
+            /* Switch to 2 columns */
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* --- NEW: Media query for large desktops --- */
+    @media (min-width: 1200px) {
+        .blog-grid {
+            /* Switch to 4 columns as requested */
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+
+    /* --- Card styles (Slightly adjusted) --- */
     .card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    max-width: 350px;
-}
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex; /* Helps align content vertically */
+        flex-direction: column;
+        /* REMOVED max-width to allow the grid to control the size */
+    }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-.card-content {
-    padding: 16px;
-}
+    .card-content {
+        padding: 16px;
+        flex-grow: 1; /* Allows this section to grow, pushing the footer down */
+        display: flex;
+        flex-direction: column;
+    }
 
-.card-content h3 {
-    margin-top: 0;
-    font-size: 1.25rem;
-}
+    .card-content h3 {
+        margin-top: 0;
+        font-size: 1.25rem;
+    }
 
-.card-content p {
-    font-size: 0.95rem;
-    color: #555;
-}
+    .card-content p {
+        font-size: 0.95rem;
+        color: #555;
+        flex-grow: 1; /* Pushes date and read more link to the bottom */
+    }
 
-.card-content small {
-    display: block;
-    margin: 8px 0;
-    color: #888;
-}
+    .card-content small {
+        display: block;
+        margin: 8px 0;
+        color: #888;
+    }
 
-.card-content .read-more {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
+    .card-content .read-more {
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+        margin-top: auto; /* Pushes the link to the bottom of the card content */
+    }
 
-.card-content .read-more:hover {
-    text-decoration: underline;
-}
+    .card-content .read-more:hover {
+        text-decoration: underline;
+    }
 </style>
 <body>
     <header>
@@ -80,18 +115,99 @@
             <div class="container">
                 <h1>My Blog</h1>
                 <p>Personal thoughts, tutorials, and deep dives into technology.</p>
-                <div class="AgenticAIVsGenAI
+                
+                <!-- This div is now the grid container for all blog posts -->
+                <div class="blog-grid">
+                    
                     <!-- Blog Post Card 1 -->
                     <article class="card">
-                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Agentic AI vs. Generative AI">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
                         <div class="card-content">
                             <h3>Agentic AI vs. Generative AI</h3>
-                            <p>A Practical Guide: From Content Creation to Autonomous Action</p>
+                            <p>A Practical Guide: From Content Creation to Autonomous Action.</p>
                             <small>Posted on Jun 27, 2025</small>
                             <a href="./blog-docs/AgenticAIVsGenAI/AgenticAI-Vs-GenAI.html" class="read-more">Read More →</a>
                         </div>
                     </article>
-                </div>
+                    
+                    <!-- Blog Post Card 2 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>Getting Started with Docker</h3>
+                            <p>A beginner's guide to containerizing your applications.</p>
+                            <small>Posted on Jun 20, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post Card 3 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>The Power of CSS Grid</h3>
+                            <p>Learn how to create complex, responsive layouts with ease.</p>
+                            <small>Posted on Jun 15, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post Card 4 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>JavaScript ES2025 Features</h3>
+                            <p>What's new in the latest version of ECMAScript and how to use it.</p>
+                            <small>Posted on Jun 10, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    
+                    <!-- Blog Post Card 5 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>Optimizing Web Performance</h3>
+                            <p>Tips and tricks to make your website load faster than ever.</p>
+                            <small>Posted on Jun 05, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post Card 6 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>A Deep Dive into React Hooks</h3>
+                            <p>Understanding useState, useEffect, and custom hooks for better apps.</p>
+                            <small>Posted on May 28, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post Card 7 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>Building a REST API with Node.js</h3>
+                            <p>Create a robust backend service using Express and MongoDB.</p>
+                            <small>Posted on May 21, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post Card 8 -->
+                    <article class="card">
+                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI-Icon.jpg" alt="Blog Post Image">
+                        <div class="card-content">
+                            <h3>Introduction to Machine Learning</h3>
+                            <p>Exploring the basic concepts and algorithms of ML.</p>
+                            <small>Posted on May 14, 2025</small>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+
+                </div> <!-- End of .blog-grid -->
             </div>
         </section>
     </main>
