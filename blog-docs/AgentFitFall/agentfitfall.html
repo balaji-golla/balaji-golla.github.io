@@ -38,6 +38,13 @@
             padding-bottom: 20px;
         }
 
+       .blog-header-img {
+      width: 100%;         /* fills container width */
+      height: 300px;       /* set desired header height */
+      object-fit: cover;   /* crops image to fill area while maintaining aspect ratio */
+      display: block;
+    }
+
         h1 {
             font-size: 2.5em;
             color: var(--primary-color);
@@ -157,6 +164,14 @@
 <body>
 
     <div class="container">
+           <img src="agentfitfall.jpg" alt="The AI Agent Pitfall: Stop Over-Engineering, Start Delivering" class="blog-header-img" />
+    
+    <article>
+            <header>
+                <h1>Agentic AI vs. Generative AI</h1>
+                <p class="byline">By Balaji Golla | Published on June 27, 2025</p>
+            </header>
+        
         <header>
             <h1>The AI Agent Pitfall: Stop Over-Engineering, Start Delivering</h1>
         </header>
