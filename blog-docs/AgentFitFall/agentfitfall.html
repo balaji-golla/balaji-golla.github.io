@@ -38,11 +38,17 @@
             padding-bottom: 20px;
         }
 
-       .blog-header-img {
+    .blog-header-img {
       width: 100%;         /* fills container width */
       height: 300px;       /* set desired header height */
       object-fit: cover;   /* crops image to fill area while maintaining aspect ratio */
       display: block;
+    }
+
+    @media (max-width: 768px) {
+      .blog-header-img {
+        height: 200px; /* adjust height for mobile view if needed */
+      }
     }
 
         h1 {
@@ -164,7 +170,7 @@
 <body>
 
     <div class="container">
-           <img src="agentfitfall.jpg" alt="The AI Agent Pitfall: Stop Over-Engineering, Start Delivering" class="blog-header-img" />
+           <img src="agentfitfall.png" alt="The AI Agent Pitfall: Stop Over-Engineering, Start Delivering" class="blog-header-img" />
     
 
 
