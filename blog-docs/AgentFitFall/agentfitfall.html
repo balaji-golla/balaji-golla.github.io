@@ -38,8 +38,21 @@
             padding-bottom: 20px;
         }
 
-          .flowchart-placeholder { text-align: center; margin: 30px 0; }
-  .flowchart-placeholder img { max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; }
+    /* Container for flowchart images */
+.flowchart-placeholder {
+    text-align: center;          /* Center the flowchart horizontally */
+    margin: 30px 0;              /* Vertical spacing above and below */
+}
+
+/* Flowchart image styling */
+.flowchart-placeholder img {
+    max-width: 100%;             /* Ensure image scales responsively */
+    height: auto;                /* Maintain aspect ratio */
+    border: 0px solid #ccc;      /* Light gray border around image */
+    border-radius: 1px;          /* Rounded corners for a polished look */
+    display: inline-block;       /* Prevent unexpected line breaks */
+}
+
         
     .blog-header-img {
       width: 100%;         /* fills container width */
