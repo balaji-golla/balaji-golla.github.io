@@ -1,184 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balaji Golla | Tech News & Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- Grid for blog cards --- */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            padding-top: 20px;
-        }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Balaji Golla — Tech writing on AI, data, and product. Latest posts, projects, and contact details.">
+        <title>Balaji Golla — Tech News & Portfolio</title>
+        <link rel="preload" href="/css/style.css" as="style">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-        @media (min-width: 768px) {
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+        <!-- Critical CSS: small, layout-related rules to avoid FOIT/CLS -->
+        <style>
+            :root{--gap:24px;--card-radius:8px;--muted:#666}
+            .container{max-width:1100px;margin:0 auto;padding:20px}
+            .site-header,.site-footer{background:#fff}
+            header{border-bottom:1px solid #eee}
+            .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+            .skip-link:focus{position:static;width:auto;height:auto;margin:8px}
+            nav ul{list-style:none;padding:0;margin:0;display:flex;gap:16px;align-items:center}
+            nav a{color:inherit;text-decoration:none}
+            .logo img{height:48px;width:auto;display:block}
 
-        @media (min-width: 1200px) {
-            .blog-grid {
-                grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-            }
-        }
+            .blog-grid{display:grid;grid-template-columns:1fr;gap:var(--gap);padding-top:18px}
+            @media(min-width:768px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+            @media(min-width:1200px){.blog-grid{grid-template-columns:repeat(3,1fr)}}
 
-        /* --- Card styles --- */
-        .card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-        }
+            .card{border:1px solid #e9e9e9;border-radius:var(--card-radius);overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:transform .18s ease,box-shadow .18s ease}
+            .card:hover{transform:translateY(-6px);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+            .card img{width:100%;height:auto;display:block;object-fit:cover}
+            .card-content{padding:14px;display:flex;flex-direction:column;gap:8px}
+            .card h3{font-size:1.05rem;margin:0}
+            .meta{color:var(--muted);font-size:.875rem}
+            .read-more{margin-top:8px;color:#0366d6;font-weight:600;text-decoration:none}
+        </style>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        /* --- Blog images fully visible --- */
-        .card img {
-            width: 100%;
-            height: auto; /* Keep original aspect ratio */
-            display: block;
-        }
-
-        .card-content {
-            padding: 16px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-content h3 {
-            margin-top: 0;
-            font-size: 1.25rem;
-        }
-
-        .card-content p {
-            font-size: 0.95rem;
-            color: #555;
-            flex-grow: 1;
-        }
-
-        .card-content small {
-            display: block;
-            margin: 8px 0;
-            color: #888;
-        }
-
-        .card-content .read-more {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            margin-top: auto;
-        }
-
-        .card-content .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Header logo remains independent --- */
-        header .logo img {
-            height: 50px;
-            width: auto;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="./images/balaji-h-golla.png" alt="Balaji Golla">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Blogs</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="about.html">About & Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="content">
-            <div class="container">
-                <div class="blog-grid">
-
-                    <!-- Blog Post Card 5 -->
-                    <article class="card">
-                        <img src="./blog-docs/PromptAI/promptsframework.png" alt="Blog Post Image">
-                        <div class="card-content">
-                            <h3>Blueprints for Brilliance: The Architect’s Framework for Prompting AI</h3>
-                            <p>In the exciting frontier of artificial intelligence, it’s tempting to treat AI tools like magical genie lamps—whisper a quick command, and poof, brilliance appears...</p>
-                            <small>Posted on Sep 05, 2025</small>
-                            <a href="./blog-docs/PromptAI/promptsframework.html" class="read-more">Read More →</a>
-                        </div>
-                    </article>
-
-                    <!-- Blog Post Card 4 -->
-                    <article class="card">
-                        <img src="./blog-docs/AgentFitFall/agentfitfallk.png" alt="Blog Post Image">
-                        <div class="card-content">
-                            <h3>The AI Agent Pitfall: Stop Over-Engineering, Start Delivering</h3>
-                            <p>We have seen the demos on Internet. An “AI Agent” autonomously surfs the web, books a flight, and orders a pizza, all from a single-sentence command...</p>
-                            <small>Posted on Aug 18, 2025</small>
-                            <a href="./blog-docs/AgentFitFall/agentfitfall.html" class="read-more">Read More →</a>
-                        </div>
-                    </article>
-
-                    <!-- Blog Post Card 3 -->
-                    <article class="card">
-                        <img src="./blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI.jpg" alt="Blog Post Image">
-                        <div class="card-content">
-                            <h3>Agentic AI vs. Generative AI</h3>
-                            <p>A Practical Guide: From Content Creation to Autonomous Action. Your AI is Getting a Promotion...</p>
-                            <small>Posted on Jun 27, 2025</small>
-                            <a href="./blog-docs/AgenticAIVsGenAI/AgenticAI-Vs-GenAI.html" class="read-more">Read More →</a>
-                        </div>
-                    </article>
-
-                    <!-- Blog Post Card 2 -->
-                    <article class="card">
-                        <img src="./blog-docs/DatabricksSummit2025/DatabricksSummit2025.jpeg" alt="Blog Post Image">
-                        <div class="card-content">
-                            <h3>The Future is Unified: Data + AI Summit 2025</h3>
-                            <p>The Databricks Data + AI Summit has concluded, but the shockwaves of innovation are just beginning...</p>
-                            <small>Posted on Jul 11, 2025</small>
-                            <a href="./blog-docs/DatabricksSummit2025/DatabricksSummit2025.html" class="read-more">Read More →</a>
-                        </div>
-                    </article>
-
-                    <!-- Blog Post Card 1 -->
-                    <article class="card">
-                        <img src="./blog-docs/BeyondDashboards/BeyondDashboards.jpeg" alt="Blog Post Image">
-                        <div class="card-content">
-                            <h3>Beyond the Dashboard: How AI is Delivering True Self-Service Analytics</h3>
-                            <p>For years, the promise of "self-service analytics" has felt just out of reach for most business users...</p>
-                            <small>Posted on Jun 11, 2025</small>
-                            <a href="./blog-docs/BeyondDashboards/BeyondDashboards.html" class="read-more">Read More →</a>
-                        </div>
-                    </article>
-
+        <header class="site-header">
+            <div class="container" role="banner">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+                    <a href="/" class="logo" aria-label="Balaji Golla — home">
+                        <img src="/images/balaji-h-golla.png" alt="Balaji Golla portrait">
+                    </a>
+                    <nav role="navigation" aria-label="Primary">
+                        <ul>
+                            <li><a href="/" aria-current="page">Blogs</a></li>
+                            <li><a href="/projects.html">Projects</a></li>
+                            <li><a href="/about.html">About & Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </section>
-    </main>
+        </header>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Balaji Golla. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
+        <main id="main">
+            <div class="container">
+                <h1 style="margin:0 0 12px">Latest posts</h1>
+
+                <section class="blog-grid" aria-label="Recent posts">
+
+                    <article class="card">
+                        <a href="/blog-docs/PromptAI/promptsframework.html" style="text-decoration:none;color:inherit">
+                            <img src="/blog-docs/PromptAI/promptsframework.png" alt="Prompting framework illustration" width="1200" height="675" loading="lazy">
+                            <div class="card-content">
+                                <h3>Blueprints for Brilliance: The Architect’s Framework for Prompting AI</h3>
+                                <p style="margin:0;color:#444;font-size:.95rem">A practical, repeatable framework for writing prompts that produce reliable results from large language models.</p>
+                                <div class="meta"><time datetime="2025-09-05">Sep 05, 2025</time></div>
+                                <span class="read-more">Read More →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="/blog-docs/AgentFitFall/agentfitfall.html" style="text-decoration:none;color:inherit">
+                            <img src="/blog-docs/AgentFitFall/agentfitfallk.png" alt="AI agent concept" width="1200" height="675" loading="lazy">
+                            <div class="card-content">
+                                <h3>The AI Agent Pitfall: Stop Over-Engineering, Start Delivering</h3>
+                                <p style="margin:0;color:#444;font-size:.95rem">Why many agent projects fail and how to focus on pragmatic value delivery instead of unnecessary complexity.</p>
+                                <div class="meta"><time datetime="2025-08-18">Aug 18, 2025</time></div>
+                                <span class="read-more">Read More →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="/blog-docs/AgenticAIVsGenAI/AgenticAI-Vs-GenAI.html" style="text-decoration:none;color:inherit">
+                            <img src="/blog-docs/AgenticAIVsGenAI/AgenticAIVsGenAI.jpg" alt="Agentic vs generative AI diagram" width="1200" height="675" loading="lazy">
+                            <div class="card-content">
+                                <h3>Agentic AI vs. Generative AI</h3>
+                                <p style="margin:0;color:#444;font-size:.95rem">A practical guide from content creation to autonomous action — what's changing and what matters.</p>
+                                <div class="meta"><time datetime="2025-06-27">Jun 27, 2025</time></div>
+                                <span class="read-more">Read More →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="/blog-docs/DatabricksSummit2025/DatabricksSummit2025.html" style="text-decoration:none;color:inherit">
+                            <img src="/blog-docs/DatabricksSummit2025/DatabricksSummit2025.jpeg" alt="Databricks Summit 2025 photo" width="1200" height="675" loading="lazy">
+                            <div class="card-content">
+                                <h3>The Future is Unified: Data + AI Summit 2025</h3>
+                                <p style="margin:0;color:#444;font-size:.95rem">Highlights and takeaways from the Data + AI Summit that matter for practitioners.</p>
+                                <div class="meta"><time datetime="2025-07-11">Jul 11, 2025</time></div>
+                                <span class="read-more">Read More →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <a href="/blog-docs/BeyondDashboards/BeyondDashboards.html" style="text-decoration:none;color:inherit">
+                            <img src="/blog-docs/BeyondDashboards/BeyondDashboards.jpeg" alt="Self-service analytics illustration" width="1200" height="675" loading="lazy">
+                            <div class="card-content">
+                                <h3>Beyond the Dashboard: How AI is Delivering True Self-Service Analytics</h3>
+                                <p style="margin:0;color:#444;font-size:.95rem">How AI is closing the gap and delivering analytics that business users can actually use.</p>
+                                <div class="meta"><time datetime="2025-06-11">Jun 11, 2025</time></div>
+                                <span class="read-more">Read More →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p style="margin:0">© 2025 Balaji Golla. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </body>
 </html>
